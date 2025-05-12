@@ -72,29 +72,52 @@ Use the Visual Studio Test Explorer to visualize and run individual tests.
 
 ---
 
-## 🧠 Lessons & Notes
+## 🧠 Project Reflections & Evaluation Answers
 
-### What was improved
-- Replaced direct entity usage with DTO-based construction.
-- Added services for better separation of concerns.
-- Introduced reliable and mock payment gateways for flexibility and testing.
+### ❓ What would I have liked to do but didn’t?
 
-### What could be improved in the future
-- Add persistence (EF Core, MongoDB, etc.)
-- Expose APIs (e.g., Minimal API or ASP.NET Core Web API).
-- Apply MediatR for use case orchestration.
-- Use FluentValidation for DTO validation.
+- Implement real data persistence using a database (EF Core, SQLite, or MongoDB).
+- Expose the use cases via a REST API using ASP.NET Core Minimal APIs or Controllers.
+- Add command-line interface or UI layer to simulate a real user scenario.
+- Use FluentValidation to validate DTOs more robustly before building domain entities.
+- Implement domain events to decouple logic further (e.g., after enrollment success).
 
-### Time invested
-- ~6–8 hours (design, refactor, documentation, testing)
+### 🔁 What did I do that could be improved or revisited?
+
+- Enrollment list is stored in memory; introducing a repository pattern would allow persistence without breaking the architecture.
+- Exception handling could be standardized and enriched with specific error types.
+- Logging is missing and could help trace issues in future service or API layers.
+- Test coverage is strong for the current scope, but integration tests and stress tests could be valuable for future phases.
 
 ---
 
-## 📚 Dependencies
+### 📚 What third-party libraries did I use and why?
 
-- [xUnit](https://xunit.net/)
-- [Moq](https://github.com/moq)
-- [Microsoft.NET.Test.Sdk](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk)
+- **xUnit**: A popular and extensible unit testing framework for .NET.
+- **Moq**: Used for creating test doubles to mock external dependencies like `IPaymentGateway`.
+- **Microsoft.NET.Test.Sdk**: Required to run tests and integrate with Visual Studio Test Explorer.
+
+These libraries are lightweight, widely adopted, and easy to integrate in Clean Architecture setups.
+
+---
+
+### ⏱️ How much time did I invest?
+
+- **Estimated time**: ~6 to 8 hours total.
+  - 2h planning and setting up architecture.
+  - 2–3h implementing domain, services, DTOs, and tests.
+  - 2h writing documentation and refining tests.
+
+---
+
+### 🔮 What could be improved in the future?
+
+- Add a **database layer** (with repository pattern) to persist students, courses, and enrollments.
+- Expose the system via **Web API** for actual client interaction.
+- Add a **notification service** (e.g., email on enrollment).
+- Implement **CQRS and MediatR** for scalable command/query separation.
+- Add a **validation pipeline** (FluentValidation or custom logic).
+- Write **integration and end-to-end tests** for the full flow.
 
 ---
 
