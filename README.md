@@ -103,9 +103,9 @@ These libraries are lightweight, widely adopted, and easy to integrate in Clean 
 
 ### ⏱️ How much time did I invest?
 
-- **Estimated time**: ~6 to 8 hours total.
+- **Estimated time**: ~12 hours total.
   - 2h planning and setting up architecture.
-  - 2–3h implementing domain, services, DTOs, and tests.
+  - 8h implementing domain, services, DTOs, and tests.
   - 2h writing documentation and refining tests.
 
 ---
