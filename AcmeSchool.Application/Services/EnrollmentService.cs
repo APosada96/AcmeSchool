@@ -11,11 +11,17 @@ namespace AcmeSchool.Application.Services
     {
         private readonly IPaymentGateway _paymentGateway;
         private readonly List<Enrollment> _enrollments = new();
-        private readonly StudentService _studentService = new();
-        private readonly CourseService _courseService = new();
-        public EnrollmentService(IPaymentGateway paymentGateway)
+        private readonly StudentService _studentService;
+        private readonly CourseService _courseService;
+
+        public EnrollmentService(
+            IPaymentGateway paymentGateway,
+            StudentService studentService,
+            CourseService courseService)
         {
             _paymentGateway = paymentGateway;
+            _studentService = studentService;
+            _courseService = courseService;
         }
 
         /// <summary>

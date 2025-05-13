@@ -76,7 +76,7 @@ Use the Visual Studio Test Explorer to visualize and run individual tests.
 
 ### ❓ What would I have liked to do but didn’t?
 
-- Implement real data persistence using a database (EF Core, SQLite, or MongoDB).
+- Implement real data persistence using a database (EF Core, or MongoDB).
 - Expose the use cases via a REST API using ASP.NET Core Minimal APIs or Controllers.
 - Add command-line interface or UI layer to simulate a real user scenario.
 - Use FluentValidation to validate DTOs more robustly before building domain entities.
@@ -115,7 +115,6 @@ These libraries are lightweight, widely adopted, and easy to integrate in Clean 
 - Add a **database layer** (with repository pattern) to persist students, courses, and enrollments.
 - Expose the system via **Web API** for actual client interaction.
 - Add a **notification service** (e.g., email on enrollment).
-- Implement **CQRS and MediatR** for scalable command/query separation.
 - Add a **validation pipeline** (FluentValidation or custom logic).
 - Write **integration and end-to-end tests** for the full flow.
 

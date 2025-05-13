@@ -21,10 +21,17 @@ namespace AcmeSchool.Tests.Services
                 StartDate = DateTime.UtcNow,
                 EndDate = DateTime.UtcNow.AddDays(15)
             };
+
             var paymentGatewayMock = new Mock<IPaymentGateway>();
             paymentGatewayMock.Setup(p => p.Charge(courseDto.RegistrationFee)).Returns(true);
 
-            var service = new EnrollmentService(paymentGatewayMock.Object);
+            var studentService = new StudentService();
+            var courseService = new CourseService();
+
+            var service = new EnrollmentService(
+                paymentGatewayMock.Object,
+                studentService,
+                courseService);
 
             // Act
             var enrollment = service.Enroll(studentDto, courseDto);
